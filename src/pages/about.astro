@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro';
+const pageTitle = 'About';
+const text = "アバウトページです。"
+---
+
+<Layout title={pageTitle} description={text}>
+	<main>
+		<h1>{pageTitle}</h1>
+		<p>Aboutページですよ〜</p>
+		<p><a href="/">Topへ</a></p>
+	</main>
+</Layout>
+
+<style>
+	h1 {
+		color: red;
+	}
+</style>
