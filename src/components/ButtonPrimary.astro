@@ -1,12 +1,26 @@
 ---
-export interface Props {
-  text: string;
-  href: string;
-}
+// export interface Props {
+//   text: string;
+//   href: string;
+// }
 
-const { text, href } = Astro.props;
+const { text, href, accent = false } = Astro.props;
 ---
 
-<a class="link-card" href={href}>
-  <span>{text}</span>
+<a class:list={["buttonPrimary", { "-accenet": accent }]} href={href}>
+  <slot />
 </a>
+
+<style>
+  .buttonPrimary {
+    display: inline-block;
+    padding: 1em 2em;
+    background-color: #000;
+    color: #fff;
+    border-radius: 2.5rem;
+  }
+
+  .buttonPrimary.-accenet {
+    background-color: red;
+  }
+</style>
