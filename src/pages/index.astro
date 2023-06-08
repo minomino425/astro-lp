@@ -3,12 +3,19 @@ import Layout from "../layouts/Layout.astro";
 import ButtonPrimary from "../components/ButtonPrimary.astro";
 const pageTitle = "Top Page";
 const text = "トップページです。";
+
+import "../assets/scss/style.scss";
+import { Image, Picture } from "@astrojs/image/components";
+import photoFlower from "../assets/img/flower.jpg";
 ---
 
 <Layout title={pageTitle} description={text}>
   <main>
     <h1>{pageTitle}</h1>
-    <ButtonPrimary href="/" accent="true">トップページのボタン</ButtonPrimary>
+    <Image src={photoFlower} format={"webp"} alt="" loading="eager" />
+    <ButtonPrimary href="/" accent="true" id="top">
+      トップページのボタン
+    </ButtonPrimary>
   </main>
 </Layout>
 

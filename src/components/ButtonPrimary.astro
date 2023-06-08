@@ -4,16 +4,22 @@
 //   href: string;
 // }
 
-const { text, href, accent = false } = Astro.props;
+const { text, href, accent = false, ...props } = Astro.props;
 ---
 
-<a class:list={["buttonPrimary", { "-accenet": accent }]} href={href}>
+<a
+  class:list={["buttonPrimary", { "-accenet": accent }]}
+  {...props}
+  href={href}
+>
   <slot />
 </a>
 
-<style>
+<style lang="scss">
   .buttonPrimary {
-    display: inline-block;
+    display: block;
+    width: 300px;
+    text-align: center;
     padding: 1em 2em;
     background-color: #000;
     color: #fff;
